@@ -3,12 +3,12 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { availableColors } from '@/lib/constants';
 
-interface ThemeContextType {
+interface IThemeContextType {
   primaryColor: string;
   changePrimaryColor: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const ThemeContext = createContext<IThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);

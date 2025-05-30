@@ -6,11 +6,11 @@ import { AppHeader, AppNavbar } from './components';
 import { MainContent } from './components/main-content';
 import { useTheme } from '@/contexts/ThemeContext';
 
-interface AppLayoutProps {
+interface IAppLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AppLayout({ children }: AppLayoutProps) {
+export default function AppLayout({ children }: IAppLayoutProps) {
   const [opened, { toggle: toggleNavbar }] = useDisclosure();
   const { setColorScheme, colorScheme } = useMantineColorScheme();
   const { changePrimaryColor } = useTheme();

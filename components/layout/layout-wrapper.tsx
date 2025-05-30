@@ -4,11 +4,11 @@ import { MantineProvider, createTheme } from '@mantine/core';
 import { useTheme } from '@/contexts/ThemeContext';
 import AppLayout from './app-layout';
 
-interface LayoutWrapperProps {
+interface ILayoutWrapperProps {
   children: React.ReactNode;
 }
 
-export default function LayoutWrapper({ children }: LayoutWrapperProps) {
+export default function LayoutWrapper({ children }: ILayoutWrapperProps) {
   const { primaryColor } = useTheme();
 
   const theme = createTheme({

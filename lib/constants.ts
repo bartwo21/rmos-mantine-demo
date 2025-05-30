@@ -23,3 +23,12 @@ export const groceries = [
     'blue', 'cyan', 'dark', 'grape', 'gray', 'green', 'indigo', 
     'lime', 'orange', 'pink', 'red', 'teal', 'violet', 'yellow'
   ];
+
+  export const productData = {
+    title: "Norway Fjord Adventures",
+    description: "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
+    imageUrl: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png",
+    badgeText: "On Sale",
+    badgeColor: "pink",
+    buttonText: "Book classic tour now"
+  };

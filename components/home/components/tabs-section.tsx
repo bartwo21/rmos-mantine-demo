@@ -1,17 +1,9 @@
 import { Tabs, Button, Group, HoverCard, Text, Autocomplete, MultiSelect, TagsInput, Slider, ColorInput } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
 import { ProductCard } from './index';
+import { productData } from '@/lib/constants';
 
 export function TabsSection() {
-  const productData = {
-    title: "Norway Fjord Adventures",
-    description: "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway",
-    imageUrl: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png",
-    badgeText: "On Sale",
-    badgeColor: "pink",
-    buttonText: "Book classic tour now"
-  };
-
   return (
     <Tabs defaultValue="gallery">
       <Tabs.List>

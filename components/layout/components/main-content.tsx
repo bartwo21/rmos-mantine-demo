@@ -1,10 +1,10 @@
 import { AppShell } from '@mantine/core';
 
-interface MainContentProps {
+interface IMainContentProps {
   children: React.ReactNode;
 }
 
-export function MainContent({ children }: MainContentProps) {
+export function MainContent({ children }: IMainContentProps) {
   return (
     <AppShell.Main>
       <div>
