@@ -1,9 +1,10 @@
 "use client"
 
-import { AppShell } from '@mantine/core';
+import { AppShell, useMantineColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { AppHeader, AppNavbar } from './components';
 import { MainContent } from './components/main-content';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -11,6 +12,8 @@ interface AppLayoutProps {
 
 export default function AppLayout({ children }: AppLayoutProps) {
   const [opened, { toggle: toggleNavbar }] = useDisclosure();
+  const { setColorScheme, colorScheme } = useMantineColorScheme();
+  const { changePrimaryColor } = useTheme();
 
   return (
     <AppShell
@@ -23,7 +26,11 @@ export default function AppLayout({ children }: AppLayoutProps) {
       padding="md"
     >
       <AppHeader opened={opened} toggleNavbar={toggleNavbar} />
-      <AppNavbar />
+      <AppNavbar 
+        setColorScheme={setColorScheme} 
+        colorScheme={colorScheme}
+        changePrimaryColor={changePrimaryColor}
+      />
       <MainContent>
         {children}
       </MainContent>

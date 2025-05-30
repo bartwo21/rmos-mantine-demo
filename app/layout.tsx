@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import '@mantine/core/styles.css';
-import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
-import AppLayout from '../components/layout/app-layout';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+import { ThemeProvider } from '../contexts/ThemeContext';
+import LayoutWrapper from '../components/layout/layout-wrapper';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <MantineProvider>
-          <AppLayout>
+        <ThemeProvider>
+          <LayoutWrapper>
             {children}
-          </AppLayout>
-        </MantineProvider>
+          </LayoutWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

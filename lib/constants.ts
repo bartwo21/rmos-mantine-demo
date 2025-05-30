@@ -18,3 +18,8 @@ export const groceries = [
         'Nutrient-packed green vegetable. Broccoli is packed with vitamins, minerals, and fiber. It has a distinct flavor and can be enjoyed steamed, roasted, or added to stir-fries.',
     },
   ];
+
+  export const availableColors = [
+    'blue', 'cyan', 'dark', 'grape', 'gray', 'green', 'indigo', 
+    'lime', 'orange', 'pink', 'red', 'teal', 'violet', 'yellow'
+  ];

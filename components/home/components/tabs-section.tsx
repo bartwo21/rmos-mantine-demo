@@ -1,4 +1,4 @@
-import { Tabs, Button, Group, HoverCard, Text } from '@mantine/core';
+import { Tabs, Button, Group, HoverCard, Text, Autocomplete, MultiSelect, TagsInput, Slider, ColorInput } from '@mantine/core';
 import { IconPhoto, IconMessageCircle, IconSettings } from '@tabler/icons-react';
 import { ProductCard } from './index';
 
@@ -13,7 +13,7 @@ export function TabsSection() {
   };
 
   return (
-    <Tabs defaultValue="gallery" className='mt-5 -ml-4'>
+    <Tabs defaultValue="gallery">
       <Tabs.List>
         <Tabs.Tab value="gallery" leftSection={<IconPhoto size={12} />}>
           Gallery
@@ -45,6 +45,32 @@ export function TabsSection() {
             </HoverCard.Dropdown>
           </HoverCard>
         </Group>
+        <Group justify="center">
+          <Autocomplete
+            label="Choose"
+            placeholder="Pick value or enter anything"
+            data={['React', 'Angular', 'Vue', 'Svelte']}
+          />
+          <MultiSelect
+            label="Your favorite libraries"
+            placeholder="Pick value"
+            data={['React', 'Angular', 'Vue', 'Svelte']}
+          />
+          <TagsInput label="Press Enter to submit a tag" placeholder="Enter tag" />;
+          <ColorInput
+            label="Input label"
+            placeholder="Input placeholder"
+          />
+        </Group>
+          <Slider
+            color="blue"
+            defaultValue={40}
+            marks={[
+              { value: 20, label: '20%' },
+              { value: 50, label: '50%' },
+              { value: 80, label: '80%' },
+            ]}
+          />
       </Tabs.Panel>
 
       <Tabs.Panel value="messages" className="ml-4 mt-2">

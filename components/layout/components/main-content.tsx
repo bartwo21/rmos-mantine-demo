@@ -7,7 +7,7 @@ interface MainContentProps {
 export function MainContent({ children }: MainContentProps) {
   return (
     <AppShell.Main>
-      <div className="mt-4">
+      <div>
         {children}
       </div>
     </AppShell.Main>

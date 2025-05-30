@@ -1,7 +1,13 @@
-import { AppShell, NavLink } from '@mantine/core';
+import { AppShell, Button, NavLink } from '@mantine/core';
 import { IconGauge, IconFingerprint } from '@tabler/icons-react';
 
-export function AppNavbar() {
+interface IAppNavbarProps {
+  setColorScheme: (colorScheme: 'light' | 'dark') => void;
+  colorScheme: string;
+  changePrimaryColor: () => void;
+}
+
+export function AppNavbar({ setColorScheme, colorScheme, changePrimaryColor }: IAppNavbarProps) {
   return (
     <AppShell.Navbar p="md">
       <NavLink
@@ -33,6 +39,14 @@ export function AppNavbar() {
       <NavLink label="Contact" href="/contact" />
       <NavLink label="Contact" href="/contact" />
       <NavLink label="Contact" href="/contact" />
+      <div className='mt-auto flex gap-2 justify-center'>
+        <Button onClick={changePrimaryColor} variant="filled">
+          Change Color
+        </Button>
+        <Button variant="default" onClick={() => setColorScheme(colorScheme === 'light' ? 'dark' : 'light')}>
+          {colorScheme === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </div>
     </AppShell.Navbar>
   );
 } 
